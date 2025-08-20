@@ -11,7 +11,7 @@
       authorized_key:
         user: paul
         state: present
-        key: "{{ lookup('file', '~/.ssh/cloudbolt_k8s.pub') }}"
+        key: "{{ lookup('file', ssh_pubkey_path) }}"
 
     - name: Wait for apt to unlock
       become: yes
